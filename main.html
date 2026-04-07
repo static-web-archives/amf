@@ -1852,5 +1852,22 @@
       /* ]]> */
     </script>
     <script></script>
+
+<!-- jQuery (if not already loaded by WP) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Superfish JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.10/js/superfish.min.js"></script>
+
+<!-- Initialize dropdown -->
+<script>
+jQuery(document).ready(function($) {
+    $('#main-nav').superfish({
+        delay: 300,
+        animation: {opacity: 'show', height: 'show'},
+        speed: 'fast'
+    });
+});
+</script>
   </body>
 </html>
