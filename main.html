@@ -689,7 +689,42 @@
     white-space: normal !important; /* allow wrapping */
     word-break: break-word !important; /* break long words */
 }
+
       </style>
+
+
+<style>
+#mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    overflow-y: auto;
+    z-index: 999999;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+#mobile-menu-overlay.is-open {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    #show-nav-menu {
+        display: block;
+        position: relative;
+        z-index: 1000000;
+    }
+
+    .sf-menu {
+        display: none !important;
+    }
+}
+</style>
+
+
     </div>
     <script
       type="text/javascript"
@@ -1935,24 +1970,25 @@ jQuery(document).ready(function($){
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('show-nav-menu');
     const overlay = document.getElementById('mobile-menu-overlay');
     const closeBtn = overlay.querySelector('.close-menu');
 
-    toggleButton.addEventListener('click', function(e) {
+    if (!toggleButton || !overlay || !closeBtn) return;
+
+    toggleButton.addEventListener('click', function (e) {
         e.preventDefault();
-        overlay.style.display = 'block';
+        overlay.classList.add('is-open');
     });
 
-    closeBtn.addEventListener('click', function() {
-        overlay.style.display = 'none';
+    closeBtn.addEventListener('click', function () {
+        overlay.classList.remove('is-open');
     });
 
-    // Optional: close overlay when clicking outside
-    overlay.addEventListener('click', function(e) {
+    overlay.addEventListener('click', function (e) {
         if (e.target === overlay) {
-            overlay.style.display = 'none';
+            overlay.classList.remove('is-open');
         }
     });
 });
