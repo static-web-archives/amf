@@ -1,5 +1,5 @@
 <style>
-/* Basic menu reset */
+/* ===== Basic menu reset ===== */
 .sf-menu, .sf-menu ul {
     list-style: none;
     margin: 0;
@@ -24,7 +24,7 @@
     background: #ddd;
 }
 
-/* Dropdown styling */
+/* ===== Dropdown styling ===== */
 .sf-menu ul {
     display: none;
     position: absolute;
@@ -40,8 +40,16 @@
     display: block;
 }
 
-.sf-menu li:hover > ul {
-    display: block; /* hover opens submenu on desktop */
+/* Desktop hover open */
+@media (min-width: 769px) {
+    .sf-menu li:hover > ul {
+        display: block;
+    }
+}
+
+/* Class for toggled open state */
+.sf-menu li.open > ul {
+    display: block;
 }
 
 /* Optional arrow indicator */
@@ -49,10 +57,11 @@
     margin-left: 5px;
 }
 
-/* Mobile menu */
+/* ===== Mobile menu ===== */
 @media (max-width: 768px) {
     .sf-menu {
-        display: block;
+        display: none; /* Hidden by default, toggle with JS */
+        width: 100%;
     }
     .sf-menu > li {
         display: block;
@@ -61,6 +70,12 @@
     .sf-menu ul {
         position: static;
         border: none;
+    }
+    .sf-menu li a {
+        background: #f5f5f5;
+    }
+    .sf-menu li.open > ul {
+        display: block;
     }
 }
 </style>
@@ -110,24 +125,33 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile toggle button
     const toggleButton = document.getElementById('show-nav-menu');
     const menu = document.getElementById('main-nav');
 
+    // Toggle main menu on mobile
     toggleButton.addEventListener('click', function(e) {
         e.preventDefault();
-        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        menu.classList.toggle('open');
     });
 
-    // Mobile submenu toggle
+    // Toggle submenus on mobile
     document.querySelectorAll('.menu-item-has-children > a').forEach(function(link) {
         link.addEventListener('click', function(e) {
-            if(window.innerWidth <= 768) {
+            if (window.innerWidth <= 768) {
                 e.preventDefault();
-                const submenu = link.nextElementSibling;
-                submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
+                link.parentElement.classList.toggle('open');
             }
         });
+    });
+
+    // Optional: close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!menu.contains(e.target) && !toggleButton.contains(e.target)) {
+            menu.classList.remove('open');
+            document.querySelectorAll('.sf-menu li.open').forEach(function(li) {
+                li.classList.remove('open');
+            });
+        }
     });
 });
 </script>
