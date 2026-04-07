@@ -655,6 +655,35 @@
           width: 100%;
           height: 100%;
         }
+
+
+        /* Ensure dropdown menus align left under parent */
+.sf-menu ul.sub-menu {
+    display: none;           /* handled by Superfish */
+    position: absolute;      /* absolute positioning */
+    top: 100%;               /* just below the parent item */
+    left: 0;                 /* align left */
+    min-width: 200px;        /* consistent width */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: #fff;        /* adjust to match your menu */
+    border: 1px solid #ccc;  /* optional */
+    text-align: left;        /* ensure text is left-aligned */
+}
+
+/* Ensure each submenu item fills width and text aligns left */
+.sf-menu ul.sub-menu li {
+    display: block;
+    width: 100%;
+}
+
+.sf-menu ul.sub-menu li a {
+    display: block;
+    padding: 8px 12px;
+    text-align: left;
+    white-space: nowrap;     /* prevent line wrapping */
+}
       </style>
     </div>
     <script
