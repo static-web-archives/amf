@@ -815,7 +815,8 @@
                 });
 
                 // Setup mobile menu click handlers AFTER menu is loaded
-                setupMobileMenu();
+                // Use setTimeout to ensure DOM is fully updated
+                setTimeout(setupMobileMenu, 100);
 
             } catch (error) {
                 console.error("Failed to load menu:", error);
@@ -827,31 +828,51 @@
             const overlay = document.getElementById('mobile-menu-wrap');
             const closeBtn = overlay ? overlay.querySelector('.mobile-menu-close') : null;
 
-            if (!toggleButton || !overlay || !closeBtn) {
-                console.log('Mobile menu elements check:', {
-                    toggleButton: !!toggleButton,
-                    overlay: !!overlay,
-                    closeBtn: !!closeBtn
-                });
+            console.log('Setting up mobile menu...', {
+                toggleButton: toggleButton,
+                overlay: overlay,
+                closeBtn: closeBtn
+            });
+
+            if (!toggleButton) {
+                console.error('Hamburger button #show-nav-menu not found!');
                 return;
             }
 
+            if (!overlay) {
+                console.error('Mobile menu overlay #mobile-menu-wrap not found!');
+                return;
+            }
+
+            if (!closeBtn) {
+                console.error('Close button .mobile-menu-close not found!');
+                return;
+            }
+
+            console.log('All elements found, attaching event listeners...');
+
             toggleButton.addEventListener('click', function(e) {
+                console.log('Hamburger clicked!');
                 e.preventDefault();
                 e.stopPropagation();
                 overlay.classList.add('is-open');
+                console.log('Added is-open class to overlay');
             });
 
             closeBtn.addEventListener('click', function(e) {
+                console.log('Close button clicked!');
                 e.preventDefault();
                 overlay.classList.remove('is-open');
             });
 
             overlay.addEventListener('click', function(e) {
                 if (e.target === overlay) {
+                    console.log('Overlay background clicked!');
                     overlay.classList.remove('is-open');
                 }
             });
+
+            console.log('Mobile menu setup complete!');
         }
 
         document.addEventListener("DOMContentLoaded", loadMenu);
