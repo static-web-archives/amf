@@ -834,6 +834,25 @@
         font-style: normal;
       }
     </style>
+
+    <style>
+        #mobile-menu-wrap {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  overflow-y: auto;
+  z-index: 999999;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+#mobile-menu-wrap.is-open {
+  display: block;
+}
+    </style>
     <script src="https://www.amf30.fr/wp-includes/js/wp-emoji-release.min.js?ver=6.9.4" defer=""></script>
     <style></style>
 
@@ -1970,28 +1989,27 @@ jQuery(document).ready(function($){
 </script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.getElementById('show-nav-menu');
-    const overlay = document.getElementById('mobile-menu-overlay');
-    const closeBtn = overlay ? overlay.querySelector('.close-menu') : null;
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButton = document.getElementById('show-nav-menu');
+  const overlay = document.getElementById('mobile-menu-wrap');
+  const closeBtn = overlay ? overlay.querySelector('.mobile-menu-close') : null;
 
-    if (!toggleButton || !overlay || !closeBtn) return;
+  if (!toggleButton || !overlay || !closeBtn) return;
 
-    toggleButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        overlay.classList.add('is-open');
-    });
+  toggleButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    overlay.classList.add('is-open');
+  });
 
-    closeBtn.addEventListener('click', function() {
-        overlay.classList.remove('is-open');
-    });
+  closeBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    overlay.classList.remove('is-open');
+  });
 
-    overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) {
-            overlay.classList.remove('is-open');
-        }
-    });
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) overlay.classList.remove('is-open');
+  });
 });
 </script>
 
