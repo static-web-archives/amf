@@ -84,6 +84,15 @@
   background-color: rgba(0, 0, 0, 0.02);
   padding: 8px 0;
   margin: 0;
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+#mobile-menu-wrap .sub-menu.is-open {
+  display: block;
+  max-height: 1000px;
 }
 
 #mobile-menu-wrap .sub-menu li {
@@ -122,6 +131,10 @@
 #mobile-menu-wrap .open-submenu:hover {
   background: none !important;
   transform: scale(1.2);
+}
+
+#mobile-menu-wrap .open-submenu.is-open {
+  transform: rotate(180deg);
 }
 
 #mobile-menu-wrap .menu-item-has-children > a {
@@ -372,3 +385,29 @@ li:hover > a,
     </div>
   </div>
 </header>
+
+<script>
+// Mobile menu dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // This will run after menu.html is loaded into main.html
+  setTimeout(function() {
+    const dropdownToggles = document.querySelectorAll('#mobile-menu-wrap .open-submenu');
+
+    dropdownToggles.forEach(function(toggle) {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const parentLi = this.closest('li');
+        const submenu = parentLi.querySelector('.sub-menu');
+
+        if (submenu) {
+          // Toggle the submenu
+          submenu.classList.toggle('is-open');
+          this.classList.toggle('is-open');
+        }
+      });
+    });
+  }, 100);
+});
+</script>
