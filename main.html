@@ -684,6 +684,38 @@
     text-align: left;
     white-space: nowrap;     /* prevent line wrapping */
 }
+
+/* Reset flex for submenus */
+.sf-menu ul.sub-menu {
+    display: none;        /* handled by Superfish */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    text-align: left;
+
+    display: block !important;  /* prevent flex/layout overrides */
+    flex-direction: column !important; /* ensure vertical stacking */
+}
+
+/* Reset submenu items */
+.sf-menu ul.sub-menu li {
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Links inside submenu items */
+.sf-menu ul.sub-menu li a {
+    display: block !important;
+    padding: 8px 12px;
+    text-align: left !important;
+    white-space: nowrap;
+}
       </style>
     </div>
     <script
