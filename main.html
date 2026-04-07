@@ -703,7 +703,7 @@
       }
 
       #mobile-menu-wrap li:hover > a {
-        color: #2563eb !important;
+        color: #1a1a1a !important;
         padding-left: 8px;
       }
 
@@ -725,7 +725,7 @@
       }
 
       #mobile-menu-wrap .sub-menu li:hover > a {
-        color: #2563eb !important;
+        color: #1a1a1a !important;
         padding-left: 32px;
       }
 
@@ -736,8 +736,8 @@
         padding: 0 !important;
         margin-left: 12px;
         cursor: pointer;
-        font-size: 18px;
-        transition: transform 0.2s ease;
+        font-size: 16px;
+        transition: transform 0.3s ease;
         vertical-align: middle;
         display: inline-block;
         width: 24px;
@@ -748,11 +748,22 @@
 
       #mobile-menu-wrap .open-submenu:hover {
         background: none !important;
-        transform: scale(1.2);
+      }
+
+      #mobile-menu-wrap .open-submenu.active {
+        transform: rotate(180deg);
       }
 
       #mobile-menu-wrap .menu-item-has-children > a {
         display: inline;
+      }
+
+      #mobile-menu-wrap .sub-menu {
+        display: none;
+      }
+
+      #mobile-menu-wrap .sub-menu.open {
+        display: block;
       }
     </style>
   </head>
@@ -981,6 +992,22 @@
                     console.log('Overlay background clicked!');
                     overlay.classList.remove('is-open');
                 }
+            });
+
+            const submenuToggles = overlay.querySelectorAll('.open-submenu');
+            submenuToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const parentLi = this.closest('li');
+                    const submenu = parentLi.querySelector('.sub-menu');
+
+                    if (submenu) {
+                        submenu.classList.toggle('open');
+                        this.classList.toggle('active');
+                    }
+                });
             });
 
             console.log('Mobile menu setup complete!');
