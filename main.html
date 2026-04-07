@@ -1934,5 +1934,29 @@ jQuery(document).ready(function($){
 });
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('show-nav-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const closeBtn = overlay.querySelector('.close-menu');
+
+    toggleButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        overlay.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', function() {
+        overlay.style.display = 'none';
+    });
+
+    // Optional: close overlay when clicking outside
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+            overlay.style.display = 'none';
+        }
+    });
+});
+</script>
+
   </body>
 </html>
