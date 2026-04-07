@@ -699,16 +699,12 @@
         padding: 16px 0;
         font-size: 17px;
         font-weight: 500;
-        transition: padding-left 0.2s ease;
+        transition: color 0.2s ease, padding-left 0.2s ease;
       }
 
       #mobile-menu-wrap li:hover > a {
-        color: #1a1a1a !important;
+        color: #2563eb !important;
         padding-left: 8px;
-      }
-
-      #mobile-menu-wrap a:hover {
-        color: #1a1a1a !important;
       }
 
       #mobile-menu-wrap .sub-menu {
@@ -728,12 +724,8 @@
         font-weight: 400;
       }
 
-      #mobile-menu-wrap .sub-menu a:hover {
-        color: #1a1a1a !important;
-      }
-
       #mobile-menu-wrap .sub-menu li:hover > a {
-        color: #1a1a1a !important;
+        color: #2563eb !important;
         padding-left: 32px;
       }
 
@@ -744,7 +736,8 @@
         padding: 0 !important;
         margin-left: 12px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 18px;
+        transition: transform 0.2s ease;
         vertical-align: middle;
         display: inline-block;
         width: 24px;
@@ -755,18 +748,11 @@
 
       #mobile-menu-wrap .open-submenu:hover {
         background: none !important;
+        transform: scale(1.2);
       }
 
       #mobile-menu-wrap .menu-item-has-children > a {
         display: inline;
-      }
-
-      #mobile-menu-wrap .sub-menu {
-        display: none;
-      }
-
-      #mobile-menu-wrap .sub-menu.open {
-        display: block;
       }
     </style>
   </head>
@@ -995,32 +981,6 @@
                     console.log('Overlay background clicked!');
                     overlay.classList.remove('is-open');
                 }
-            });
-
-            const submenuToggles = overlay.querySelectorAll('.open-submenu');
-            submenuToggles.forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    const parentLi = this.closest('li');
-                    const submenu = parentLi.querySelector('.sub-menu');
-                    const icon = this.querySelector('i');
-
-                    if (submenu) {
-                        const isOpen = submenu.classList.contains('open');
-                        submenu.classList.toggle('open');
-                        this.classList.toggle('active');
-
-                        if (icon) {
-                            if (isOpen) {
-                                icon.className = 'icon-angle-down';
-                            } else {
-                                icon.className = 'icon-angle-up';
-                            }
-                        }
-                    }
-                });
             });
 
             console.log('Mobile menu setup complete!');
