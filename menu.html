@@ -1,32 +1,15 @@
 <style>
-    /* Dropdown fallback */
-.sf-menu ul {
-    display: none;
-    position: absolute;
-    background: #fff; /* optional */
-    z-index: 9999;
-}
-
-.sf-menu li:hover > ul {
-    display: block;
-}
-</style>
-
-<style>
-/* Basic dropdown */
+/* Basic menu reset */
 .sf-menu, .sf-menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.sf-menu li {
-    position: relative;
-    display: inline-block; /* horizontal menu */
-}
-
 .sf-menu > li {
-    margin-right: 20px; /* space between top-level items */
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .sf-menu li a {
@@ -34,8 +17,14 @@
     padding: 8px 12px;
     display: block;
     color: #000;
+    background: #f5f5f5;
 }
 
+.sf-menu li a:hover {
+    background: #ddd;
+}
+
+/* Dropdown styling */
 .sf-menu ul {
     display: none;
     position: absolute;
@@ -52,7 +41,7 @@
 }
 
 .sf-menu li:hover > ul {
-    display: block; /* hover for desktop */
+    display: block; /* hover opens submenu on desktop */
 }
 
 /* Optional arrow indicator */
@@ -60,64 +49,85 @@
     margin-left: 5px;
 }
 
-/* Mobile fallback */
+/* Mobile menu */
 @media (max-width: 768px) {
     .sf-menu {
         display: block;
     }
-    .sf-menu li {
+    .sf-menu > li {
         display: block;
+        margin-right: 0;
     }
     .sf-menu ul {
         position: static;
+        border: none;
     }
 }
 </style>
 
 <header id="hb-header">
+    <div id="header-inner" class="nav-type-1" role="banner">
+        <div id="header-inner-bg">
+            <div class="container">
+                <div id="logo">
+                    <a href="https://www.amf30.fr/">
+                        <img src="https://www.amf30.fr/wp-content/uploads/2024/04/30GARD_V3-AMF.svg" alt="AMF 30">
+                    </a>
+                </div>
+                <nav class="main-navigation minimal-skin light-menu-dropdown" role="navigation">
+                    <ul id="main-nav" class="sf-menu">
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#"><span>L’ASSOCIATION</span> <span class="sf-sub-indicator">▾</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="https://www.amf30.fr/bureau/">BUREAU</a></li>
+                                <li><a href="https://www.amf30.fr/conseil-dadministration/">CONSEIL D’ADMINISTRATION</a></li>
+                                <li><a href="https://www.amf30.fr/statuts/">STATUTS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.amf30.fr/public/PDF/2026/20260327.pdf">Universités des Maires 2026</a></li>
+                        <li><a href="https://www.amf30.fr/elections-2026/">ELECTIONS 2026</a></li>
+                        <li><a href="https://salondesmaires-gard.com/">SALON DES MAIRES</a></li>
+                        <li><a href="https://www.amf30.fr/formulaire/">SERVICE JURIDIQUE</a></li>
+                        <li><a href="https://www.amf30.fr/actualites/">ACTUALITÉS</a></li>
+                        <li><a href="https://www.amf30.fr/reunions/">RÉUNIONS</a></li>
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#"><span>ANNUAIRE</span> <span class="sf-sub-indicator">▾</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="https://www.amf30.fr/public/PDF/2021/AFM30_Annuaire_2020_web.pdf">ANNUAIRE DES MAIRES ET DES PRÉSIDENTS D’EPCI</a></li>
+                                <li><a href="https://www.amf30.fr/wp-content/uploads/2025/11/Annuaire-des-Maires-du-Gard-Mise-a-jour-20251127_1411.pdf">ANNUAIRE : Mise à jour</a></li>
+                                <li><a href="https://www.amf30.fr/les-deputes/">LES DÉPUTÉS</a></li>
+                                <li><a href="https://www.amf30.fr/les-senateurs/">LES SÉNATEURS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.amf.asso.fr/m/dossiers/page.php?id=41803">SOS MAIRES</a></li>
+                    </ul>
+                    <a href="#" id="show-nav-menu" aria-label="Navigation"><i class="icon-bars"></i></a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
 
-				
-<!-- BEGIN #header-inner -->
-<div id="header-inner" class="nav-type-1" role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile toggle button
+    const toggleButton = document.getElementById('show-nav-menu');
+    const menu = document.getElementById('main-nav');
 
-    <!-- BEGIN #header-inner-bg -->
-    <div id="header-inner-bg">
+    toggleButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    });
 
-        <div class="container">
-
-	<div id="logo"><div class="hb-dark-logo hb-logo-wrap hb-visible-logo"><a href="https://www.amf30.fr/"><img src="https://www.amf30.fr/wp-content/uploads/2024/04/30GARD_V3-AMF.svg" class="default" alt="AMF 30"><img src="https://www.amf30.fr/wp-content/uploads/2018/07/logo.svg" class="retina" alt="AMF 30"></a></div></div>
-	<nav class="main-navigation minimal-skin  light-menu-dropdown" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
-
-	
-	<ul id="main-nav" class="sf-menu sf-js-enabled sf-arrows sf-subbed" style="touch-action: pan-y;"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-has-children menu-item-1309 has-ul"><a href="https://www.amf30.fr" class="sf-with-ul"><span>L’ASSOCIATION</span><i class="icon-angle-right sf-sub-indicator"></i></a>
-<ul class="sub-menu sf-subbed" style="display: none;">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1321"><a href="https://www.amf30.fr/bureau/"><span>BUREAU</span></a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1322"><a href="https://www.amf30.fr/conseil-dadministration/"><span>CONSEIL D’ADMINISTRATION</span></a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1323"><a href="https://www.amf30.fr/statuts/"><span>STATUTS</span></a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1680"><a href="https://www.amf30.fr/public/PDF/2026/20260327.pdf"><span>Universités des Maires 2026</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1654"><a href="https://www.amf30.fr/elections-2026/"><span>ELECTIONS 2026</span></a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1553"><a href="https://salondesmaires-gard.com/"><span>SALON DES MAIRES</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1328"><a href="https://www.amf30.fr/formulaire/"><span>SERVICE JURIDIQUE</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1319"><a href="https://www.amf30.fr/actualites/"><span>ACTUALITÉS</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1325"><a href="https://www.amf30.fr/reunions/"><span>RÉUNIONS</span></a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1310 has-ul"><a href="https://www.amf30.fr/wp-content/uploads/2025/11/Annuaire-des-Maires-du-Gard-Mise-a-jour-20251127_1411.pdf" class="sf-with-ul"><span>ANNUAIRE</span><i class="icon-angle-right sf-sub-indicator"></i></a>
-<ul class="sub-menu sf-subbed" style="display: none;">
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1311"><a href="https://www.amf30.fr/public/PDF/2021/AFM30_Annuaire_2020_web.pdf"><span>ANNUAIRE DES MAIRES ET DES PRÉSIDENTS D’EPCI</span></a></li>
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1312"><a href="https://www.amf30.fr/wp-content/uploads/2025/11/Annuaire-des-Maires-du-Gard-Mise-a-jour-20251127_1411.pdf"><span>ANNUAIRE : Mise à jour</span></a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1330"><a href="https://www.amf30.fr/les-deputes/"><span>LES DÉPUTÉS</span></a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1329"><a href="https://www.amf30.fr/les-senateurs/"><span>LES SÉNATEURS</span></a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1631"><a href="https://www.amf.asso.fr/m/dossiers/page.php?id=41803"><span>SOS MAIRES</span></a></li>
-</ul>
-	<a href="#" id="show-nav-menu" aria-label="Navigation"><i class="icon-bars"></i></a>
-</nav>
-
-</div><!-- END .container or .container-wide -->
-
-    </div><!-- END #header-inner-bg -->
-</div><!-- END #header-inner -->
-
-	</header>
+    // Mobile submenu toggle
+    document.querySelectorAll('.menu-item-has-children > a').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            if(window.innerWidth <= 768) {
+                e.preventDefault();
+                const submenu = link.nextElementSibling;
+                submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
+            }
+        });
+    });
+});
+</script>
