@@ -625,136 +625,6 @@
       type="text/css"
       media="all"
     />
-
-    <style>
-      #mobile-menu-wrap {
-        position: fixed;
-        inset: 0;
-        width: 100%;
-        height: 100vh;
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        overflow-y: auto;
-        z-index: 999999;
-        padding: 0;
-        box-sizing: border-box;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-      }
-
-      #mobile-menu-wrap.is-open {
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-      }
-
-      #mobile-menu-wrap .hb-top-holder {
-        display: none !important;
-      }
-
-      #mobile-menu-wrap .mobile-menu-close {
-        position: absolute;
-        top: 24px;
-        right: 24px;
-        font-size: 28px;
-        color: #1a1a1a;
-        cursor: pointer;
-        z-index: 10;
-        background: none;
-        border: none;
-        padding: 8px;
-        transition: transform 0.2s ease;
-      }
-
-      #mobile-menu-wrap .mobile-menu-close:hover {
-        transform: rotate(90deg);
-      }
-
-      #mobile-menu-wrap nav {
-        padding: 100px 32px 40px 32px;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      #mobile-menu-wrap ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      #mobile-menu-wrap li {
-        border-bottom: 1px solid #e5e7eb;
-        transition: background-color 0.2s ease;
-      }
-
-      #mobile-menu-wrap li:hover {
-        background-color: rgba(0, 0, 0, 0.02) !important;
-      }
-
-      #mobile-menu-wrap a {
-        color: #1a1a1a !important;
-        text-decoration: none;
-        display: block;
-        padding: 16px 0;
-        font-size: 17px;
-        font-weight: 500;
-        transition: color 0.2s ease, padding-left 0.2s ease;
-      }
-
-      #mobile-menu-wrap li:hover > a {
-        color: #2563eb !important;
-        padding-left: 8px;
-      }
-
-      #mobile-menu-wrap .sub-menu {
-        background-color: rgba(0, 0, 0, 0.02);
-        padding: 8px 0;
-        margin: 0;
-      }
-
-      #mobile-menu-wrap .sub-menu li {
-        border-bottom: none;
-      }
-
-      #mobile-menu-wrap .sub-menu a {
-        padding: 12px 0 12px 24px;
-        font-size: 15px;
-        color: #4b5563 !important;
-        font-weight: 400;
-      }
-
-      #mobile-menu-wrap .sub-menu li:hover > a {
-        color: #2563eb !important;
-        padding-left: 32px;
-      }
-
-      #mobile-menu-wrap .open-submenu {
-        color: #1a1a1a !important;
-        background: none !important;
-        border: none !important;
-        padding: 0 !important;
-        margin-left: 12px;
-        cursor: pointer;
-        font-size: 18px;
-        transition: transform 0.2s ease;
-        vertical-align: middle;
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        line-height: 24px;
-        text-align: center;
-      }
-
-      #mobile-menu-wrap .open-submenu:hover {
-        background: none !important;
-        transform: scale(1.2);
-      }
-
-      #mobile-menu-wrap .menu-item-has-children > a {
-        display: inline;
-      }
-    </style>
   </head>
   <body
     class="home wp-singular page-template-default page page-id-23 wp-embed-responsive wp-theme-HBTheme hb-stretched-layout hb-preloader hb-alt-sidebar disable-native-prettyphoto wpb-js-composer js-comp-ver-8.4.1 vc_responsive hb-transform pace-done"
@@ -779,6 +649,10 @@
         }
       </style>
     </div>
+
+    <!-- jQuery + Superfish (load BEFORE any content that uses them) -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.10/js/superfish.min.js"></script>
 
     <div class="cc-revoke cc-bottom cc-animate cc-color-override-1332973529" style="">Cookie Policy</div>
     <div
@@ -815,91 +689,6 @@
       <div class="pace-activity"></div>
     </div>
 
-
-
-
-    <div id="mobile-menu-wrap">
-      <div class="hb-top-holder"></div>
-      <a class="mobile-menu-close"><i class="hb-icon-x"></i></a>
-      <nav id="mobile-menu" class="clearfix interactive">
-        <div class="menu-main-container">
-          <ul id="menu-main" class="menu-main-menu-container">
-            <li
-              id="menu-item-1309"
-              class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-has-children menu-item-1309"
-            >
-              <a href="https://www.amf30.fr" aria-current="page">L'ASSOCIATIONS</a>
-              <ul class="sub-menu">
-                <li id="menu-item-1321" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1321">
-                  <a href="https://www.amf30.fr/bureau/">BUREAU</a>
-                </li>
-                <li id="menu-item-1322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1322">
-                  <a href="https://www.amf30.fr/conseil-dadministration/">CONSEIL D'ADMINISTRATION</a>
-                </li>
-                <li id="menu-item-1323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1323">
-                  <a href="https://www.amf30.fr/statuts/">STATUTS</a>
-                </li>
-              </ul>
-              <span class="open-submenu"><i class="icon-angle-down"></i></span>
-            </li>
-            <li id="menu-item-1680" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1680">
-              <a href="https://www.amf30.fr/public/PDF/2026/20260327.pdf">Universités des Maires 2026</a>
-            </li>
-            <li id="menu-item-1654" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1654">
-              <a href="https://www.amf30.fr/elections-2026/">ELECTIONS 2026</a>
-            </li>
-            <li id="menu-item-1553" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1553">
-              <a href="https://salondesmaires-gard.com/">SALON DES MAIRES</a>
-            </li>
-            <li id="menu-item-1328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1328">
-              <a href="https://www.amf30.fr/formulaire/">SERVICE JURIDIQUE</a>
-            </li>
-            <li id="menu-item-1319" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1319">
-              <a href="https://www.amf30.fr/actualites/">ACTUALITÉS</a>
-            </li>
-            <li id="menu-item-1325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1325">
-              <a href="https://www.amf30.fr/reunions/">RÉUNIONS</a>
-            </li>
-            <li
-              id="menu-item-1310"
-              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1310"
-            >
-              <a
-                href="https://www.amf30.fr/wp-content/uploads/2025/11/Annuaire-des-Maires-du-Gard-Mise-a-jour-20251127_1411.pdf"
-              >
-                ANNUAIRE
-              </a>
-              <ul class="sub-menu">
-                <li id="menu-item-1311" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1311">
-                  <a href="https://www.amf30.fr/public/PDF/2021/AFM30_Annuaire_2020_web.pdf">
-                    ANNUAIRE DES MAIRES ET DES PRÉSIDENTS D'EPCI
-                  </a>
-                </li>
-                <li id="menu-item-1312" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1312">
-                  <a
-                    href="https://www.amf30.fr/wp-content/uploads/2025/11/Annuaire-des-Maires-du-Gard-Mise-a-jour-20251127_1411.pdf"
-                  >
-                    ANNUAIRE : Mise à jour
-                  </a>
-                </li>
-                <li id="menu-item-1330" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1330">
-                  <a href="https://www.amf30.fr/les-deputes/">LES DÉPUTÉS</a>
-                </li>
-                <li id="menu-item-1329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1329">
-                  <a href="https://www.amf30.fr/les-senateurs/">LES SÉNATEURS</a>
-                </li>
-              </ul>
-              <span class="open-submenu"><i class="icon-angle-down"></i></span>
-            </li>
-            <li id="menu-item-1631" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1631">
-              <a href="https://www.amf.asso.fr/m/dossiers/page.php?id=41803">SOS MAIRES</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <!-- END #mobile-menu-wrap -->
-
     <div id="hb-wrap">
       <div id="main-wrapper" class="hb-stretched-layout fw-100 nav-type-1">
 
@@ -925,7 +714,6 @@
                 });
 
                 // Setup mobile menu click handlers AFTER menu is loaded
-                // Use setTimeout to ensure DOM is fully updated
                 setTimeout(setupMobileMenu, 100);
 
             } catch (error) {
@@ -1555,7 +1343,6 @@
     <!-- END #hb-wrap -->
 
     <div id="hb-modal-overlay"></div>
-
     <script
       type="text/javascript"
       src="https://www.amf30.fr/wp-content/themes/HBTheme/assets/js/scripts.js?ver=4.0.1"
@@ -1652,8 +1439,5 @@
         console.error(err.message);
       }
     </script>
-    <!-- jQuery + Superfish (load BEFORE any content that uses them) -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.10/js/superfish.min.js"></script>
   </body>
 </html>
