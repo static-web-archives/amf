@@ -889,23 +889,38 @@
     <div id="hb-wrap">
       <div id="main-wrapper" class="hb-stretched-layout fw-100 nav-type-1">
 
-        <div id="menu-container"></div>
+<div id="menu-container"></div>
 
-        <!-- jQuery + Superfish -->
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.10/js/superfish.min.js"></script>
+<!-- jQuery + Superfish -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.10/js/superfish.min.js"></script>
 
-        <!-- Initialize after menu exists -->
-        <script>
-            jQuery(document).ready(function($){
+<script>
+async function loadMenu() {
+    try {
+        const response = await fetch('menu.html');
+        if (!response.ok) throw new Error("HTTP " + response.status);
+
+        const html = await response.text();
+        document.getElementById('menu-container').innerHTML = html;
+
+        // Initialize Superfish AFTER menu is loaded
+        jQuery(document).ready(function($){
             $('#main-nav').superfish({
                 delay: 300,
                 animation: {opacity: 'show', height: 'show'},
                 speed: 'fast',
                 cssArrows: false
             });
-            });
-        </script>
+        });
+
+    } catch (error) {
+        console.error("Failed to load menu:", error);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", loadMenu);
+</script>
 
         <div id="slider-section" class="clearfix highend-featured-section-"></div>
         <!-- END #slider-section -->
