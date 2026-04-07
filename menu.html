@@ -1,81 +1,123 @@
 <style>
-/* ===== Mobile menu ===== */
-@media (max-width: 900px) {
-    /* Hide desktop menu */
-    .sf-menu {
+/* ===== Basic menu reset ===== */
+.sf-menu, .sf-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sf-menu > li {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.sf-menu li a {
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    color: #000;
+    background: #f5f5f5;
+}
+
+.sf-menu li a:hover {
+    background: #ddd;
+}
+
+/* ===== Dropdown styling ===== */
+.sf-menu ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.sf-menu ul li {
+    display: block;
+}
+
+/* Desktop hover open */
+@media (min-width: 901px) {
+    .sf-menu li:hover > ul {
+        display: block;
+    }
+
+    /* Ensure main nav always visible on desktop */
+    #mobile-menu-overlay {
         display: none;
     }
 
-    /* Mobile toggle button */
+    #show-nav-menu {
+        display: none;
+    }
+}
+
+/* ===== Mobile overlay menu ===== */
+#mobile-menu-overlay {
+    display: none;           /* hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    overflow-y: auto;
+    z-index: 9999;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+#mobile-menu-overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#mobile-menu-overlay li {
+    margin-bottom: 15px;
+}
+
+#mobile-menu-overlay li a {
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+#mobile-menu-overlay li ul li a {
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+/* Close button */
+#mobile-menu-overlay .close-menu {
+    display: block;
+    text-align: right;
+    font-size: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color: #000;
+}
+
+/* Hamburger toggle button */
+#show-nav-menu {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 900px) {
     #show-nav-menu {
         display: block;
-        cursor: pointer;
-        font-size: 24px;
-        color: #000;
     }
 
-    /* Full-screen overlay for mobile menu */
-    .mobile-menu-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #fff;
-        z-index: 9999;
-        overflow-y: auto;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
-        padding: 80px 20px 20px 20px; /* leave space for logo */
-    }
-
-    /* When menu is open */
-    .mobile-menu-overlay.open {
-        transform: translateX(0);
-    }
-
-    /* Mobile menu links */
-    .mobile-menu-overlay ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .mobile-menu-overlay li {
-        margin-bottom: 15px;
-    }
-
-    .mobile-menu-overlay li a {
-        display: block;
-        font-size: 18px;
-        text-decoration: none;
-        color: #000;
-        padding: 12px 10px;
-        background: #f5f5f5;
-        border-radius: 4px;
-    }
-
-    .mobile-menu-overlay li a:hover {
-        background: #ddd;
-    }
-
-    /* Submenus */
-    .mobile-menu-overlay li ul.sub-menu {
+    /* Hide desktop menu on mobile */
+    .sf-menu {
         display: none;
-        padding-left: 15px;
-    }
-
-    .mobile-menu-overlay li.open > ul.sub-menu {
-        display: block;
-    }
-
-    /* Close button */
-    .mobile-menu-overlay #close-nav-menu {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 32px;
-        cursor: pointer;
     }
 }
 </style>
@@ -84,19 +126,57 @@
     <div id="header-inner" class="nav-type-1" role="banner">
         <div id="header-inner-bg">
             <div class="container">
+                <!-- Logo -->
                 <div id="logo">
                     <a href="https://www.amf30.fr/">
                         <img src="https://www.amf30.fr/wp-content/uploads/2024/04/30GARD_V3-AMF.svg" alt="AMF 30">
                     </a>
                 </div>
+
+                <!-- Hamburger for mobile -->
+                <a href="#" id="show-nav-menu" aria-label="Navigation"><i class="icon-bars">☰</i></a>
+
+                <!-- Desktop navigation -->
                 <nav class="main-navigation minimal-skin light-menu-dropdown" role="navigation">
+                    <ul id="main-nav" class="sf-menu">
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#"><span>L’ASSOCIATION</span> <span class="sf-sub-indicator">▾</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="https://www.amf30.fr/bureau/">BUREAU</a></li>
+                                <li><a href="https://www.amf30.fr/conseil-dadministration/">CONSEIL D’ADMINISTRATION</a></li>
+                                <li><a href="https://www.amf30.fr/statuts/">STATUTS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.amf30.fr/public/PDF/2026/20260327.pdf">Universités des Maires 2026</a></li>
+                        <li><a href="https://www.amf30.fr/elections-2026/">ELECTIONS 2026</a></li>
+                        <li><a href="https://salondesmaires-gard.com/">SALON DES MAIRES</a></li>
+                        <li><a href="https://www.amf30.fr/formulaire/">SERVICE JURIDIQUE</a></li>
+                        <li><a href="https://www.amf30.fr/actualites/">ACTUALITÉS</a></li>
+                        <li><a href="https://www.amf30.fr/reunions/">RÉUNIONS</a></li>
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#"><span>ANNUAIRE</span> <span class="sf-sub-indicator">▾</span></a>
+                            <ul class="sub-menu">
+                                <li><a href="https://www.amf30.fr/public/PDF/2021/AFM30_Annuaire_2020_web.pdf">ANNUAIRE DES MAIRES ET DES PRÉSIDENTS D’EPCI</a></li>
+                                <li><a href="https://www.amf30.fr/wp-content/uploads/2025/11/Annuaire-des-Maires-du-Gard-Mise-a-jour-20251127_1411.pdf">ANNUAIRE : Mise à jour</a></li>
+                                <li><a href="https://www.amf30.fr/les-deputes/">LES DÉPUTÉS</a></li>
+                                <li><a href="https://www.amf30.fr/les-senateurs/">LES SÉNATEURS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.amf.asso.fr/m/dossiers/page.php?id=41803">SOS MAIRES</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
 <!-- Full-screen mobile menu overlay -->
-<div class="mobile-menu-overlay" id="mobile-menu-overlay">
-    <span id="close-nav-menu">&times;</span>
+<div id="mobile-menu-overlay">
+    <span class="close-menu">&times;</span>
     <ul>
         <li class="menu-item menu-item-has-children">
-            <a href="#">L’ASSOCIATION ▾</a>
-            <ul class="sub-menu">
+            <a href="#">L’ASSOCIATION</a>
+            <ul>
                 <li><a href="https://www.amf30.fr/bureau/">BUREAU</a></li>
                 <li><a href="https://www.amf30.fr/conseil-dadministration/">CONSEIL D’ADMINISTRATION</a></li>
                 <li><a href="https://www.amf30.fr/statuts/">STATUTS</a></li>
@@ -109,8 +189,8 @@
         <li><a href="https://www.amf30.fr/actualites/">ACTUALITÉS</a></li>
         <li><a href="https://www.amf30.fr/reunions/">RÉUNIONS</a></li>
         <li class="menu-item menu-item-has-children">
-            <a href="#">ANNUAIRE ▾</a>
-            <ul class="sub-menu">
+            <a href="#">ANNUAIRE</a>
+            <ul>
                 <li><a href="https://www.amf30.fr/public/PDF/2021/AFM30_Annuaire_2020_web.pdf">ANNUAIRE DES MAIRES ET DES PRÉSIDENTS D’EPCI</a></li>
                 <li><a href="https://www.amf30.fr/wp-content/uploads/2025/11/Annuaire-des-Maires-du-Gard-Mise-a-jour-20251127_1411.pdf">ANNUAIRE : Mise à jour</a></li>
                 <li><a href="https://www.amf30.fr/les-deputes/">LES DÉPUTÉS</a></li>
@@ -120,34 +200,27 @@
         <li><a href="https://www.amf.asso.fr/m/dossiers/page.php?id=41803">SOS MAIRES</a></li>
     </ul>
 </div>
-                    <a href="#" id="show-nav-menu" aria-label="Navigation"><i class="icon-bars"></i></a>
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.getElementById('show-nav-menu');
-    const mobileMenu = document.getElementById('mobile-menu-overlay');
-    const closeButton = document.getElementById('close-nav-menu');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const closeBtn = overlay.querySelector('.close-menu');
 
     toggleButton.addEventListener('click', function(e) {
         e.preventDefault();
-        mobileMenu.classList.add('open');
+        overlay.style.display = 'block';
     });
 
-    closeButton.addEventListener('click', function() {
-        mobileMenu.classList.remove('open');
+    closeBtn.addEventListener('click', function() {
+        overlay.style.display = 'none';
     });
 
-    // Toggle submenus
-    mobileMenu.querySelectorAll('.menu-item-has-children > a').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            link.parentElement.classList.toggle('open');
-        });
+    // Optional: close overlay when clicking outside
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+            overlay.style.display = 'none';
+        }
     });
 });
 </script>
