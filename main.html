@@ -663,36 +663,31 @@
     top: 100%;               /* below parent */
     left: 0;                 /* align left */
     min-width: 200px;        /* base width */
+    max-width: 300px;        /* optional max width */
     padding: 0;
     margin: 0;
     list-style: none;
     background: #fff;        /* adjust to match your menu */
     border: 1px solid #ccc;  /* optional border */
-    text-align: left;        /* text alignment */
-    flex-direction: column;  /* vertical stacking if flex is applied elsewhere */
+    text-align: left !important; /* force text left */
+    flex-direction: column !important; /* ensure vertical stacking */
 }
 
-/* Each submenu item fills width and stacks vertically */
+/* Ensure dropdown items do not inherit unwanted flex/center styles */
 .sf-menu ul.sub-menu li {
-    display: block;
-    width: 100%;
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
 }
 
 /* Links inside submenu items */
 .sf-menu ul.sub-menu li a {
-    display: block;
+    display: block !important;
     padding: 8px 12px;
-    text-align: left;
-    white-space: normal;      /* allow text wrapping */
-    word-break: break-word;   /* break long words if needed */
+    text-align: left !important;   /* force left */
+    white-space: normal !important; /* allow wrapping */
+    word-break: break-word !important; /* break long words */
 }
-
-/* Optional: adjust submenu width dynamically to content */
-.sf-menu ul.sub-menu {
-    width: max-content;       /* width adjusts to longest item */
-    max-width: 300px;         /* optional: prevent it from getting too wide */
-}
-
       </style>
     </div>
     <script
