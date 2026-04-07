@@ -699,12 +699,16 @@
         padding: 16px 0;
         font-size: 17px;
         font-weight: 500;
-        transition: color 0.2s ease, padding-left 0.2s ease;
+        transition: padding-left 0.2s ease;
       }
 
       #mobile-menu-wrap li:hover > a {
         color: #1a1a1a !important;
         padding-left: 8px;
+      }
+
+      #mobile-menu-wrap a:hover {
+        color: #1a1a1a !important;
       }
 
       #mobile-menu-wrap .sub-menu {
@@ -724,6 +728,10 @@
         font-weight: 400;
       }
 
+      #mobile-menu-wrap .sub-menu a:hover {
+        color: #1a1a1a !important;
+      }
+
       #mobile-menu-wrap .sub-menu li:hover > a {
         color: #1a1a1a !important;
         padding-left: 32px;
@@ -737,7 +745,6 @@
         margin-left: 12px;
         cursor: pointer;
         font-size: 16px;
-        transition: transform 0.3s ease;
         vertical-align: middle;
         display: inline-block;
         width: 24px;
@@ -748,10 +755,6 @@
 
       #mobile-menu-wrap .open-submenu:hover {
         background: none !important;
-      }
-
-      #mobile-menu-wrap .open-submenu.active {
-        transform: rotate(180deg);
       }
 
       #mobile-menu-wrap .menu-item-has-children > a {
@@ -1002,10 +1005,20 @@
 
                     const parentLi = this.closest('li');
                     const submenu = parentLi.querySelector('.sub-menu');
+                    const icon = this.querySelector('i');
 
                     if (submenu) {
+                        const isOpen = submenu.classList.contains('open');
                         submenu.classList.toggle('open');
                         this.classList.toggle('active');
+
+                        if (icon) {
+                            if (isOpen) {
+                                icon.className = 'icon-angle-down';
+                            } else {
+                                icon.className = 'icon-angle-up';
+                            }
+                        }
                     }
                 });
             });
