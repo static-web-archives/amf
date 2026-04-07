@@ -101,6 +101,18 @@
     white-space: normal !important;
     word-break: break-word !important;
 }
+
+/* Desktop menu */
+li:hover > a,
+.menu li:hover > a {
+    color: black !important; /* font color turns black on hover */
+}
+
+/* Mobile menu */
+#mobile-menu-wrap li:hover > a,
+#mobile-menu-wrap li:focus > a {
+    color: black !important; /* ensures mobile menu text turns black */
+}
 </style>
 
 <header id="hb-header">
@@ -149,10 +161,5 @@
             </div>
         </div>
     </div>
-    <style>
-    li a:hover {
-    color: black!important;
-}
-</style>
 </header>
 

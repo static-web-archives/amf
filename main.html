@@ -756,9 +756,16 @@
       }
 
 
-      li:hover {
-    background-color: black; /* or text color: black if you prefer */
-    color: white; /* text color so it’s readable on black */
+/* Desktop menu */
+li:hover > a,
+.menu li:hover > a {
+    color: black !important; /* font color turns black on hover */
+}
+
+/* Mobile menu */
+#mobile-menu-wrap li:hover > a,
+#mobile-menu-wrap li:focus > a {
+    color: black !important; /* ensures mobile menu text turns black */
 }
     </style>
   </head>
@@ -1562,11 +1569,6 @@
     <!-- END #hb-wrap -->
 
     <div id="hb-modal-overlay"></div>
-<style>
-    li a:hover {
-    color: black!important;
-}
-</style>
     <script
       type="text/javascript"
       src="https://www.amf30.fr/wp-content/themes/HBTheme/assets/js/scripts.js?ver=4.0.1"
