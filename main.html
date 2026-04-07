@@ -635,7 +635,7 @@
         background: #fff;
         overflow-y: auto;
         z-index: 999999;
-        padding: 40px 20px;
+        padding: 0;
         box-sizing: border-box;
         opacity: 0;
         visibility: hidden;
@@ -647,6 +647,50 @@
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;
+      }
+
+      #mobile-menu-wrap .hb-top-holder {
+        display: none !important;
+      }
+
+      #mobile-menu-wrap .mobile-menu-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 32px;
+        color: #333;
+        cursor: pointer;
+        z-index: 10;
+        background: none;
+        border: none;
+        padding: 10px;
+      }
+
+      #mobile-menu-wrap nav {
+        padding: 80px 20px 40px 20px;
+      }
+
+      #mobile-menu-wrap a {
+        color: #333 !important;
+        text-decoration: none;
+        display: block;
+        padding: 12px 0;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      #mobile-menu-wrap a:hover {
+        color: #0066cc !important;
+      }
+
+      #mobile-menu-wrap .sub-menu a {
+        padding-left: 20px;
+        font-size: 14px;
+        color: #666 !important;
+      }
+
+      #mobile-menu-wrap .open-submenu {
+        color: #333 !important;
       }
     </style>
   </head>
