@@ -12,6 +12,68 @@
 }
 </style>
 
+<style>
+/* Basic dropdown */
+.sf-menu, .sf-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sf-menu li {
+    position: relative;
+    display: inline-block; /* horizontal menu */
+}
+
+.sf-menu > li {
+    margin-right: 20px; /* space between top-level items */
+}
+
+.sf-menu li a {
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    color: #000;
+}
+
+.sf-menu ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.sf-menu ul li {
+    display: block;
+}
+
+.sf-menu li:hover > ul {
+    display: block; /* hover for desktop */
+}
+
+/* Optional arrow indicator */
+.sf-sub-indicator {
+    margin-left: 5px;
+}
+
+/* Mobile fallback */
+@media (max-width: 768px) {
+    .sf-menu {
+        display: block;
+    }
+    .sf-menu li {
+        display: block;
+    }
+    .sf-menu ul {
+        position: static;
+    }
+}
+</style>
+
 <header id="hb-header">
 
 				

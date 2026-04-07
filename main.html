@@ -1853,9 +1853,6 @@
     </script>
     <script></script>
 
-<!-- jQuery (if not already loaded by WP) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <!-- Superfish JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/superfish/1.7.10/js/superfish.min.js"></script>
 
@@ -1869,5 +1866,42 @@ jQuery(document).ready(function($) {
     });
 });
 </script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all top-level menu items with children
+    const menuItems = document.querySelectorAll('.sf-menu li.menu-item-has-children');
+
+    menuItems.forEach(function(item) {
+        const link = item.querySelector('a.sf-with-ul');
+
+        // Click to toggle submenu
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // prevent page jump
+            const submenu = item.querySelector('.sub-menu');
+            if(submenu.style.display === 'block') {
+                submenu.style.display = 'none';
+            } else {
+                // close other open submenus
+                document.querySelectorAll('.sf-menu .sub-menu').forEach(function(sm){
+                    sm.style.display = 'none';
+                });
+                submenu.style.display = 'block';
+            }
+        });
+    });
+
+    // Close submenu if clicked outside
+    document.addEventListener('click', function(e){
+        if(!e.target.closest('.sf-menu')) {
+            document.querySelectorAll('.sf-menu .sub-menu').forEach(function(sm){
+                sm.style.display = 'none';
+            });
+        }
+    });
+});
+</script>
+
   </body>
 </html>
