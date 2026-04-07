@@ -814,9 +814,44 @@
                     });
                 });
 
+                // Setup mobile menu click handlers AFTER menu is loaded
+                setupMobileMenu();
+
             } catch (error) {
                 console.error("Failed to load menu:", error);
             }
+        }
+
+        function setupMobileMenu() {
+            const toggleButton = document.getElementById('show-nav-menu');
+            const overlay = document.getElementById('mobile-menu-wrap');
+            const closeBtn = overlay ? overlay.querySelector('.mobile-menu-close') : null;
+
+            if (!toggleButton || !overlay || !closeBtn) {
+                console.log('Mobile menu elements check:', {
+                    toggleButton: !!toggleButton,
+                    overlay: !!overlay,
+                    closeBtn: !!closeBtn
+                });
+                return;
+            }
+
+            toggleButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                overlay.classList.add('is-open');
+            });
+
+            closeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                overlay.classList.remove('is-open');
+            });
+
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    overlay.classList.remove('is-open');
+                }
+            });
         }
 
         document.addEventListener("DOMContentLoaded", loadMenu);
