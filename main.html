@@ -656,66 +656,43 @@
           height: 100%;
         }
 
-
-        /* Ensure dropdown menus align left under parent */
+/* Dropdown menus: hidden by default, left-aligned under parent */
 .sf-menu ul.sub-menu {
-    display: none;           /* handled by Superfish */
-    position: absolute;      /* absolute positioning */
-    top: 100%;               /* just below the parent item */
+    display: none;           /* hide initially, Superfish shows on hover */
+    position: absolute;
+    top: 100%;               /* below parent */
     left: 0;                 /* align left */
-    min-width: 200px;        /* consistent width */
+    min-width: 200px;        /* base width */
     padding: 0;
     margin: 0;
     list-style: none;
     background: #fff;        /* adjust to match your menu */
-    border: 1px solid #ccc;  /* optional */
-    text-align: left;        /* ensure text is left-aligned */
+    border: 1px solid #ccc;  /* optional border */
+    text-align: left;        /* text alignment */
+    flex-direction: column;  /* vertical stacking if flex is applied elsewhere */
 }
 
-/* Ensure each submenu item fills width and text aligns left */
+/* Each submenu item fills width and stacks vertically */
 .sf-menu ul.sub-menu li {
     display: block;
     width: 100%;
 }
 
+/* Links inside submenu items */
 .sf-menu ul.sub-menu li a {
     display: block;
     padding: 8px 12px;
     text-align: left;
-    white-space: nowrap;     /* prevent line wrapping */
+    white-space: normal;      /* allow text wrapping */
+    word-break: break-word;   /* break long words if needed */
 }
 
-/* Reset flex for submenus */
+/* Optional: adjust submenu width dynamically to content */
 .sf-menu ul.sub-menu {
-    display: none;        /* handled by Superfish */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 200px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    background: #fff;
-    border: 1px solid #ccc;
-    text-align: left;
-
-    display: block !important;  /* prevent flex/layout overrides */
-    flex-direction: column !important; /* ensure vertical stacking */
+    width: max-content;       /* width adjusts to longest item */
+    max-width: 300px;         /* optional: prevent it from getting too wide */
 }
 
-/* Reset submenu items */
-.sf-menu ul.sub-menu li {
-    display: block !important;
-    width: 100% !important;
-}
-
-/* Links inside submenu items */
-.sf-menu ul.sub-menu li a {
-    display: block !important;
-    padding: 8px 12px;
-    text-align: left !important;
-    white-space: nowrap;
-}
       </style>
     </div>
     <script
