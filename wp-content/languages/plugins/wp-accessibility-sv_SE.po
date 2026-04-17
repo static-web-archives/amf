@@ -1,0 +1,731 @@
+# Translation of Plugins - WP Accessibility - Stable (latest release) in Swedish
+# This file is distributed under the same license as the Plugins - WP Accessibility - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-11-19 15:39:15+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"Language: sv_SE\n"
+"Project-Id-Version: Plugins - WP Accessibility - Stable (latest release)\n"
+
+#: wp-accessibility-stats.php:492
+msgid "No data found"
+msgstr "Inga data hittades"
+
+#: wp-accessibility-settings.php:498
+msgid "All Visitors"
+msgstr "Alla besökare"
+
+#: wp-accessibility-settings.php:502
+msgid "Site Administrators"
+msgstr "Webbplatsadministratörer"
+
+#: wp-accessibility-settings.php:774
+msgid "Affiliate Links"
+msgstr "Partnerlänkar"
+
+#: wp-accessibility-stats.php:18
+msgid "Stats"
+msgstr "Statistik"
+
+#: wp-accessibility-stats.php:19
+msgid "Accessibility Stats"
+msgstr "Statistik om tillgänglighet"
+
+#: wp-accessibility-stats.php:20
+msgid "Add New"
+msgstr "Lägg till ny"
+
+#: wp-accessibility-stats.php:21
+msgid "Create New"
+msgstr "Skapa ny"
+
+#: wp-accessibility-stats.php:22
+msgid "Edit Stats"
+msgstr "Redigera statistik"
+
+#: wp-accessibility-stats.php:23
+msgid "New"
+msgstr "Nytt"
+
+#: wp-accessibility-stats.php:238
+msgid "WP Accessibility Stats"
+msgstr "Statistik för WP Accessibility"
+
+#: wp-accessibility-stats.php:24
+msgid "View"
+msgstr "Visa"
+
+#: wp-accessibility-stats.php:26
+msgid "No stats found"
+msgstr "Ingen statistik hittades"
+
+#: wp-accessibility-stats.php:27
+msgid "No stats found in trash"
+msgstr "Inga statistik hittades i papperskorg"
+
+#: wp-accessibility-stats.php:282
+msgid "Pages Viewed"
+msgstr "Visade sidor"
+
+#: wp-accessibility-stats.php:284
+msgid "User Actions"
+msgstr "Användaråtgärder"
+
+#: wp-accessibility-stats.php:532
+msgid "Unknown browser"
+msgstr "Okänd webbläsare"
+
+#. translators: Post ID.
+#: wp-accessibility-stats.php:609
+msgid "User: %d"
+msgstr "Användare: %d"
+
+#: wp-accessibility-stats.php:639
+msgid "Last Action"
+msgstr "Senaste åtgärd"
+
+#: wp-accessibility-stats.php:640
+msgid "Info"
+msgstr "Information"
+
+#: wp-accessibility-stats.php:668
+msgid "High Contrast"
+msgstr "Hög kontrast"
+
+#: wp-accessibility-stats.php:668
+msgid "Large Font Size"
+msgstr "Stor textstorlek"
+
+#: wp-accessibility-stats.php:282
+msgid "Page Stats"
+msgstr "Sidstatistik"
+
+#: wp-accessibility-stats.php:638
+msgid "Statistic Type"
+msgstr "Statistiktyp"
+
+#: wp-accessibility-stats.php:60
+msgid "Stats Types"
+msgstr "Statistiktyper"
+
+#: wp-accessibility-settings.php:490
+msgid "Page Statistics Tracking"
+msgstr "Spårning av sidstatistik"
+
+#: wp-accessibility-settings.php:771
+msgid "Buy Accessibility Checker"
+msgstr "Köp ”Accessibility Checker”"
+
+#. translators: Post ID.
+#: wp-accessibility-stats.php:319
+msgid "User %s"
+msgstr "Användare %s"
+
+#. translators: Number of accessibility issues fixed.
+#: wp-accessibility-stats.php:455 wp-accessibility-stats.php:470
+msgid "%d issue fixed"
+msgid_plural "%d issues fixed"
+msgstr[0] "%d problem åtgärdat"
+msgstr[1] "%d problem åtgärdade"
+
+#: wp-accessibility-stats.php:561
+msgid "The language of the page was set."
+msgstr "Språket på sidan angavs."
+
+#: wp-accessibility-stats.php:655
+msgid "User Action"
+msgstr "Användaråtgärd"
+
+#. translators: Action enabled.
+#: wp-accessibility-stats.php:672
+msgid "%s enabled"
+msgstr "%s aktiverad"
+
+#. translators: Action enabled.
+#: wp-accessibility-stats.php:672
+msgid "%s disabled"
+msgstr "%s inaktiverad"
+
+#: wp-accessibility-stats.php:682
+msgid "Page loaded"
+msgstr "Sidan laddades"
+
+#: wp-accessibility-stats.php:547
+msgid "<code>tabindex</code> was removed from a link."
+msgstr "<code>tabindex</code> togs bort från en länk."
+
+#: wp-accessibility-stats.php:548
+msgid "<code>tabindex</code> was added to a fake button."
+msgstr "<code>tabindex</code> lades till på en falsk knapp."
+
+#: wp-accessibility-stats.php:549
+msgid "<code>tabindex</code> were removed from links, inputs, and buttons."
+msgstr "<code>tabindex</code> togs bort från länkar, inmatningsfält och knappar."
+
+#: wp-accessibility-stats.php:707
+msgid "WP Accessibility Statistics"
+msgstr "Statistik för WP Accessibility"
+
+#: wp-accessibility-alt.php:230
+msgid "Long alt text"
+msgstr "Lång alt-text"
+
+#: wp-accessibility-alt.php:233
+msgid "Suspicious alt text"
+msgstr "Misstänkt alt-text"
+
+#: wp-accessibility-alt.php:236
+msgid "Caption and alt text are the same"
+msgstr "Bildtext och alt-text är samma"
+
+#: wp-accessibility-alt.php:239
+msgid "Missing alt text"
+msgstr "Alt-text saknas"
+
+#: wp-accessibility-settings.php:745
+msgid "Ready to fix your site?"
+msgstr "Är du redo att åtgärda din webbplats?"
+
+#: wp-accessibility-settings.php:756
+msgid "Get Accessibility Checker"
+msgstr "Skaffa ”Accessibility Checker”"
+
+#: wp-accessibility-settings.php:759
+msgid "Affiliate Link"
+msgstr "Partnerlänk"
+
+#: wp-accessibility-settings.php:292
+msgid "Font size"
+msgstr "Textstorlek"
+
+#: wp-accessibility-settings.php:296
+msgid "Contrast"
+msgstr "Kontrast"
+
+#: wp-accessibility-settings.php:300
+msgid "Grayscale"
+msgstr "Gråskala"
+
+#: wp-accessibility.php:893
+msgid "Summary"
+msgstr "Sammanfattning"
+
+#: wp-accessibility.php:939
+msgid "Content Summary"
+msgstr "Innehållssammanfattning"
+
+#: wp-accessibility.php:954
+msgid "Simple Content Summary"
+msgstr "Enkel innehållssammanfattning"
+
+#: wp-accessibility-alt.php:66
+msgid "Long <code>alt</code> text"
+msgstr "Lång <code>alt</code>-text"
+
+#: wp-accessibility-settings.php:120 wp-accessibility-settings.php:369
+msgid "Continue Reading"
+msgstr "Fortsätt läsa"
+
+#: wp-accessibility-settings.php:413
+msgid "Accessibility Features"
+msgstr "Tillgänglighetsfunktioner"
+
+#: wp-accessibility-help.php:22
+msgid "WP Accessibility Help"
+msgstr "Hjälp för WP Accessibility"
+
+#: wp-accessibility-settings.php:202
+msgid "Skip to Content link target"
+msgstr "Länkmål för hoppa till innehåll"
+
+#: wp-accessibility-settings.php:203 wp-accessibility-settings.php:207
+#: wp-accessibility-settings.php:306
+msgid "ID attribute starting with <code>#</code>"
+msgstr "ID-attribut som börjar med <code>#</code>"
+
+#: wp-accessibility-settings.php:206
+msgid "Skip to Navigation link target"
+msgstr "Länkmål för hoppa till navigering"
+
+#: wp-accessibility-settings.php:259
+msgid "Styles for Skiplinks"
+msgstr "Stilar för överhoppningslänkar"
+
+#: wp-accessibility-settings.php:288
+msgid "Enable Accessibility toolbar"
+msgstr "Aktivera verktygsfält för tillgänglighet"
+
+#: wp-accessibility-settings.php:305
+msgid "Toolbar location (optional)"
+msgstr "Plats för verktygsfält (valfritt)"
+
+#: wp-accessibility-settings.php:353
+msgid "Accessibility Fixes"
+msgstr "Tillgänglighetsåtgärder"
+
+#: wp-accessibility-settings.php:512
+msgid "Update Accessibility Tools"
+msgstr "Uppdatera tillgänglighetsverktyg"
+
+#: wp-accessibility-settings.php:93
+msgid "Accessibility Features Updated"
+msgstr "Tillgänglighetsfunktioner har uppdaterats"
+
+#: wp-accessibility-settings.php:251
+msgid "Use default Skiplink CSS"
+msgstr "Använd standard-CSS för överhoppningslänk"
+
+#: wp-accessibility-settings.php:356
+msgid "Settings that fix potential accessibility issues on your site."
+msgstr "Inställningar som åtgärdar potentiella tillgänglighetsproblem på din webbplats."
+
+#: wp-accessibility-settings.php:368
+msgid "Continue reading prefix text"
+msgstr "Prefixtext för fortsätt läsa"
+
+#: wp-accessibility-settings.php:380
+msgid "Prevent links from opening in new windows"
+msgstr "Förhindra att länkar öppnas i nya fönster"
+
+#: wp-accessibility-settings.php:384
+msgid "Your theme must have a search.php template"
+msgstr "Ditt tema måste ha en search.php-mall"
+
+#: wp-accessibility-settings.php:437
+msgid "Enable Content Summaries"
+msgstr "Aktivera innehållssammanfattningar"
+
+#: wp-accessibility-settings.php:392
+msgid "Excludes links inside <code>nav</code> elements."
+msgstr "Exkluderar länkar i <code>nav</code>-element."
+
+#: wp-accessibility-settings.php:107
+msgid "Accessibility Tools Updated"
+msgstr "Tillgänglighetsverktygen har uppdaterats"
+
+#: wp-accessibility-settings.php:384
+msgid "Force search error on empty search submission"
+msgstr "Framtvinga sökfel vid tom sökning"
+
+#: wp-accessibility-settings.php:415
+msgid "Enable content features to improve site accessibility."
+msgstr "Aktivera innehållsfunktioner för att förbättra webbplatsens tillgänglighet."
+
+#: wp-accessibility-settings.php:469
+msgid "Testing & Admin Experience"
+msgstr "Upplevelsen vid testning och administration"
+
+#: wp-accessibility-settings.php:472
+msgid "These change the admin experience or help with testing."
+msgstr "Dessa ändrar upplevelsen vid administration eller hjälper till med testning."
+
+#: wp-accessibility-settings.php:464
+msgid "Update Accessibility Features"
+msgstr "Uppdatera tillgänglighetsfunktioner"
+
+#: wp-accessibility-settings.php:672
+msgid "Customization"
+msgstr "Anpassning"
+
+#: wp-accessibility-settings.php:422 wp-accessibility-settings.php:494
+msgid "None"
+msgstr "Ingen"
+
+#: wp-accessibility-settings.php:650
+msgid "Support WP Accessibility"
+msgstr "Stöd WP Accessibility"
+
+#: wp-accessibility-settings.php:478
+msgid "Include alt attribute in media library searches"
+msgstr "Inkludera alt-attribut vid sökningar i mediabibliotek"
+
+#: wp-accessibility-settings.php:482
+msgid "Disable fullscreen block editor by default"
+msgstr "Inaktivera som standard fullskärmsläget i blockredigeraren"
+
+#: wp-accessibility-alt.php:62
+msgid "Invalid <code>alt</code>"
+msgstr "Ogiltig <code>alt</code>"
+
+#: wp-accessibility-alt.php:64
+msgid "Suspicious <code>alt</code>"
+msgstr "Misstänkt <code>alt</code>"
+
+#: wp-accessibility.php:341
+msgid "Long Description"
+msgstr "Lång beskrivning"
+
+#: wp-accessibility-longdesc.php:180
+msgid "Has Long Description"
+msgstr "Har lång beskrivning"
+
+#: wp-accessibility-settings.php:714
+msgid "Cookies"
+msgstr "Cookies"
+
+#: wp-accessibility-settings.php:711
+msgid "Privacy"
+msgstr "Integritet"
+
+#: wp-accessibility.php:782
+msgid "Please describe your problem."
+msgstr "Beskriv ditt ärende."
+
+#: wp-accessibility-settings.php:716
+msgid "Information collected by WP Accessibility"
+msgstr "Information som samlas in av WP Accessibility"
+
+#: wp-accessibility-settings.php:715
+msgid "The accessibility toolbar sets cookies to maintain awareness of the user's selected accessibility options. If the toolbar is not in use, WP Accessibility does not set any cookies."
+msgstr "Verktygsfältet för tillgänglighet skapar cookie som sparar användarens tillgängligshetsval. Om verktygsfältet inte används skapas inte heller några cookies."
+
+#: wp-accessibility-settings.php:717
+msgid "WP Accessibility does not collect any personally identifying information about users or visitors."
+msgstr "WP Accessibility samlar inte in någon personlig identifierande information om användare eller besökare."
+
+#. Translators: Contrast ratio, foreground Hex color, background Hex color.
+#: wp-accessibility-settings.php:558
+msgid "Luminosity Contrast Ratio for %2$s and %3$s is %1$s (Threshold: greater than 7:1 for AAA, 4.5:1 for AA)"
+msgstr "Luminositets- och kontrastförhållandet för %2$s och %3$s är %1$s (Tröskelvärden: högre än 7:1 för AAA, 4,5:1 för AA)"
+
+#: wp-accessibility-settings.php:300
+msgid "Grayscale is intended for testing, and will appear only for logged-in administrators"
+msgstr "Visning i gråskala är avsett för testning och visas endast för inloggade administratörer"
+
+#: wp-accessibility-settings.php:429
+msgid "Support <code>longdesc</code> on featured images"
+msgstr "Stöd <code>longdesc</code> för utvalda bilder"
+
+#: wp-accessibility.php:404
+msgid "Skip links"
+msgstr "Hoppa över länkar"
+
+#: wp-accessibility-settings.php:348
+msgid "Update Toolbar Settings"
+msgstr "Uppdatera verktygsfältets inställningar"
+
+#: wp-accessibility-settings.php:155
+msgid "Toolbar Settings Updated"
+msgstr "Verktygsfältets inställningar har uppdaterats"
+
+#: wp-accessibility-settings.php:340
+msgid "Hide toolbar on small screens."
+msgstr "Dölj verktygsfält på små skärmar."
+
+#. Translators: URL to donate.
+#: wp-accessibility-help.php:35
+msgid "Please, consider <a href=\"%s\">making a donation</a> to support WP Accessibility!"
+msgstr "Överväg att <a href=\"%s\">göra en donation</a> för att stödja WP Accessibility!"
+
+#: wp-accessibility-settings.php:328
+msgid "Use alternate font resizing stylesheet"
+msgstr "Använd en alternativ stilmall för textstorlek"
+
+#: wp-accessibility-settings.php:336
+msgid "Place toolbar on opposite side of screen."
+msgstr "Placera verktygsfält på motsatt sida av skärm."
+
+#. Author URI of the plugin
+msgid "http://www.joedolson.com/"
+msgstr "http://www.joedolson.com/"
+
+#. Author of the plugin
+msgid "Joe Dolson"
+msgstr "Joe Dolson"
+
+#. Plugin URI of the plugin
+msgid "http://www.joedolson.com/wp-accessibility/"
+msgstr "http://www.joedolson.com/wp-accessibility/"
+
+#. Plugin Name of the plugin
+msgid "WP Accessibility"
+msgstr "WP Accessibility"
+
+#: wp-accessibility-alt.php:177
+msgid "All images must either have an alt attribute or be declared as decorative."
+msgstr "Alla bilder måste antingen ha ett alt-attribut eller deklareras som dekorativa."
+
+#. Description of the plugin
+msgid "Helps improve accessibility in your WordPress site, like removing title attributes."
+msgstr "Hjälper till att förbättra tillgängligheten på din WordPress-webbplats, t.ex. att ta bort titelattribut."
+
+#: wp-accessibility.php:800
+msgid "From:"
+msgstr "Från:"
+
+#: wp-accessibility-alt.php:73
+msgid "N/A"
+msgstr "Inte tillgänglig"
+
+#: wp-accessibility-alt.php:60 wp-accessibility-alt.php:174
+msgid "Decorative"
+msgstr "Dekorativ"
+
+#: wp-accessibility-alt.php:26
+msgid "Accessibility"
+msgstr "Tillgänglighet"
+
+#: wp-accessibility.php:813
+msgid "The following additional information will be sent with your support request:"
+msgstr "Följande ytterligare information skickas med din supportförfrågan:"
+
+#: wp-accessibility.php:811
+msgid "Send Support Request"
+msgstr "Skicka supportförfråga"
+
+#: wp-accessibility.php:808
+msgid "Support Request:"
+msgstr "Supportförfrågan:"
+
+#: wp-accessibility-alt.php:57
+msgid "Add <code>alt</code> text"
+msgstr "Lägg till <code>alt</code> text"
+
+#: wp-accessibility-alt.php:68
+msgid "Has <code>alt</code>"
+msgstr "Har <code>alt</code>"
+
+#. Translators: Donation URL.
+#: wp-accessibility.php:805
+msgid "I <a href=\"%s\">made a donation</a> to help support this plugin"
+msgstr "Jag har <a href=\"%s\">donerat</a> för att stödja detta tillägg"
+
+#: wp-accessibility.php:786
+msgid "Thank you for supporting the continuing development of this plug-in! I'll get back to you as soon as I can."
+msgstr "Tack för att du stödjer den fortsatta utvecklingen av detta tillägg! Jag återkommer till dig så snart jag kan."
+
+#: wp-accessibility-settings.php:694
+msgid "Your Theme"
+msgstr "Ditt tema"
+
+#: wp-accessibility-settings.php:628
+msgid "Support this Plugin"
+msgstr "Stöd detta tillägg"
+
+#: wp-accessibility-settings.php:605
+msgid "Check Color Contrast"
+msgstr "Kontrollera färgkontrast"
+
+#: wp-accessibility-settings.php:657
+msgid "Accessibility References"
+msgstr "Tillgänglighetsreferenser"
+
+#: wp-accessibility-help.php:28
+msgid "Get Plug-in Support"
+msgstr "Skaffa hjälp med tillägget"
+
+#: wp-accessibility-settings.php:595
+msgid "Background color"
+msgstr "﻿Bakgrundsfärg"
+
+#: wp-accessibility-settings.php:590
+msgid "Foreground color"
+msgstr "Förgrundsfärg"
+
+#: wp-accessibility-settings.php:314
+msgid "Default size"
+msgstr "Standardstorlek"
+
+#: wp-accessibility-settings.php:586
+msgid "Test of relative luminosity"
+msgstr "Test av relativ ljusstyrka"
+
+#: wp-accessibility-settings.php:312
+msgid "Toolbar font size"
+msgstr "Textstorlek för verktygsfält"
+
+#: wp-accessibility-settings.php:540
+msgid "Color Contrast Tester"
+msgstr "Testare av färgkontrast"
+
+#: wp-accessibility-settings.php:571
+msgid "Test another set of colors"
+msgstr "Testa en annan uppsättning färger"
+
+#: wp-accessibility-settings.php:332
+msgid "Support Accessibility toolbar as shortcode or widget"
+msgstr "Stöd verktygsfält för tillgänglighet i form av kortkod eller widget"
+
+#: wp-accessibility-settings.php:486
+msgid "Enable diagnostic CSS"
+msgstr "Aktivera diagnostik-CSS"
+
+#: wp-accessibility-settings.php:408
+msgid "Update Miscellaneous Settings"
+msgstr "Uppdatera diverse inställningar"
+
+#: wp-accessibility-settings.php:569
+msgid "The colors compared <strong>do not pass</strong> the relative luminosity test."
+msgstr "Färgerna som jämfördes <strong>klarar inte</strong> testet för relativ luminiscens."
+
+#: wp-accessibility-settings.php:396
+msgid "Add outline to elements on keyboard focus"
+msgstr "Lägg till markerad ytterkant på element vid tangentbordsfokus"
+
+#: wp-accessibility-settings.php:399
+msgid "Outline color (hexadecimal, optional)"
+msgstr "Färg för markerad ytterkant (hexadecimalt, valfritt)"
+
+#: wp-accessibility-settings.php:560
+msgid "The colors compared <strong>pass</strong> the relative luminosity test at level AAA."
+msgstr "Färgerna som jämfördes <strong>klarar</strong> testet för relativ luminiscens på nivån AAA."
+
+#: wp-accessibility-settings.php:563
+msgid "The colors compared <strong>pass</strong> the relative luminosity test at level AA."
+msgstr "Färgerna som jämfördes <strong>klarar</strong> testet för relativ luminiscens på nivån AA."
+
+#: wp-accessibility-settings.php:423
+msgid "Link to description"
+msgstr "Länk till beskrivning"
+
+#: wp-accessibility-settings.php:392
+msgid "Force underline on links"
+msgstr "Tvinga understreck på länkar"
+
+#: wp-accessibility-settings.php:365
+msgid "Add post title to \"more\" links."
+msgstr "Lägg till inläggsrubrik på ”mer”-länkar."
+
+#: wp-accessibility-settings.php:388
+msgid "Remove tabindex from focusable elements"
+msgstr "Ta bort tabindex från element som kan fokuseras"
+
+#: wp-accessibility-settings.php:420
+msgid "Long Description UI"
+msgstr "Gränssnitt för lång beskrivning"
+
+#: wp-accessibility-settings.php:374
+msgid "<strong>Three disabled features:</strong> Site language, continue reading text and standard form labels are defined in your <code>accessibility-ready</code> theme."
+msgstr "<strong>Tre inaktiverade funktioner:</strong> Webbplatsspråk, ”fortsätt läsa”-text och standardetiketter för formulär definieras i ditt <code>tillgänglighetsklara</code> tema."
+
+#: wp-accessibility-settings.php:243
+msgid "Link text for your link"
+msgstr "Länktext för din länk"
+
+#: wp-accessibility-settings.php:239
+msgid "Add your own link (link or container ID)"
+msgstr "Lägg till din egen länk (länk eller behållar-ID)"
+
+#: wp-accessibility-settings.php:526
+msgid "Tag clouds"
+msgstr "Etikettmoln"
+
+#: wp-accessibility-settings.php:177
+msgid "Add Skiplinks"
+msgstr "Lägg till överhoppningslänkar"
+
+#: wp-accessibility-settings.php:191
+msgid "Configure Skiplinks"
+msgstr "Konfigurera överhoppningslänkar"
+
+#: wp-accessibility-settings.php:195
+msgid "Enable Skiplinks"
+msgstr "Aktivera överhoppningslänkar"
+
+#: wp-accessibility-settings.php:199
+msgid "Skiplinks always visible"
+msgstr "Överhoppningslänkar alltid synliga"
+
+#: wp-accessibility-settings.php:274
+msgid "Update Skiplink Settings"
+msgstr "Uppdatera inställningar för överhoppningslänk"
+
+#: wp-accessibility-settings.php:535
+msgid "Update Title Attribute Settings"
+msgstr "Uppdatera inställningar för ”title”-attribut"
+
+#: wp-accessibility-settings.php:222
+msgid "Site Map link target (URL for your site map)"
+msgstr "Länkmål för webbplatskarta (URL till din webbplatskarta)"
+
+#: wp-accessibility-settings.php:184
+msgid "Your <code>accessibility-ready</code> theme has skip links built in."
+msgstr "Ditt <code>tillgänglighetsförberedda</code> tema har inbyggda överhoppningslänkar."
+
+#: wp-accessibility-settings.php:171
+msgid "WP Accessibility Settings"
+msgstr "Inställningar för WP Accessibility"
+
+#: wp-accessibility-settings.php:523
+msgid "Remove title attributes from:"
+msgstr "Ta bort ”title”-attribut från:"
+
+#: wp-accessibility-settings.php:517
+msgid "Remove Title Attributes"
+msgstr "Ta bort ”title”-attribut"
+
+#: wp-accessibility-settings.php:79
+msgid "Skiplinks Settings Updated"
+msgstr "Inställningar för överhoppningslänkar har uppdaterats"
+
+#: wp-accessibility-settings.php:129
+msgid "Miscellaneous Accessibility Settings Updated"
+msgstr "Diverse tillgänglighetsinställningar uppdaterade"
+
+#: wp-accessibility.php:400
+msgid "Skip to navigation"
+msgstr "Hoppa till navigering"
+
+#: wp-accessibility.php:401
+msgid "Site map"
+msgstr "Webbplatskarta"
+
+#: wp-accessibility-settings.php:54
+msgid "Remove Title Attributes Settings Updated"
+msgstr "Inställningar uppdaterade för ”Ta bort title-attribut”"
+
+#: wp-accessibility.php:399
+msgid "Skip to Content"
+msgstr "Hoppa till innehåll"
+
+#: wp-accessibility-toolbar.php:137 wp-accessibility-toolbar.php:189
+msgid "Toggle Font size"
+msgstr "Slå på/av textstorlek"
+
+#: wp-accessibility-toolbar.php:136 wp-accessibility-toolbar.php:188
+msgid "Toggle Grayscale"
+msgstr "Slå på/av gråskala"
+
+#: wp-accessibility-toolbar.php:135 wp-accessibility-toolbar.php:187
+msgid "Toggle High Contrast"
+msgstr "Slå på/av hög kontrast"
+
+#: class-wp-accessibility-toolbar.php:66
+msgid "Title:"
+msgstr "Rubrik:"
+
+#: class-wp-accessibility-toolbar.php:33 wp-accessibility-settings.php:282
+msgid "Accessibility Toolbar"
+msgstr "Verktygsfält för tillgänglighet"
+
+#: wp-accessibility.php:413
+msgid "Comment"
+msgstr "Kommentar"
+
+#: wp-accessibility.php:412
+msgid "Website"
+msgstr "Webbplats"
+
+#: wp-accessibility.php:411
+msgid "Email"
+msgstr "E-post"
+
+#: wp-accessibility.php:410
+msgid "Name"
+msgstr "Namn"
+
+#: wp-accessibility-stats.php:25 wp-accessibility.php:409
+msgid "Search"
+msgstr "Sök"
+
+#: templates/longdesc-template.php:36
+msgid "Return to article."
+msgstr "Tillbaka till artikel."
+
+#: wp-accessibility.php:134
+msgid "Accessibility Settings"
+msgstr "Tillgänglighetsinställningar"
