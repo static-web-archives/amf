@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AMF 30 &#8211; Association Des Mairies</title>
+<meta name="description" content="AMF 30 - Association Des Mairies du Gard" />
+<link rel="icon" type="image/png" href="https://amf30.fr/wp-content/uploads/2023/06/cropped-favicon-32x32.png" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 15px;
+  }
+  a { color: #0a66a8; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; height: auto; display: block; }
+  h1, h2, h3, h4 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #222; margin: 0 0 .5em; line-height: 1.2; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+  /* Header */
+  header.site-header {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 20px; max-width: 1300px; margin: 0 auto;
+  }
+  .logo img { max-height: 80px; width: auto; }
+  nav.main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0; }
+  nav.main-nav > ul > li { position: relative; }
+  nav.main-nav a {
+    display: block; padding: 14px 12px; color: #222; font-weight: 600;
+    font-size: 13px; text-transform: uppercase; letter-spacing: .3px;
+  }
+  nav.main-nav a:hover { color: #0a66a8; text-decoration: none; }
+  nav.main-nav li.has-sub > a::after { content: " \25BE"; font-size: 10px; }
+  nav.main-nav ul.sub-menu {
+    display: none; position: absolute; top: 100%; left: 0;
+    background: #fff; border: 1px solid #e5e5e5; min-width: 240px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.08); z-index: 200; flex-direction: column;
+  }
+  nav.main-nav li.has-sub:hover > ul.sub-menu,
+  nav.main-nav li.has-sub.open > ul.sub-menu { display: flex; }
+  nav.main-nav ul.sub-menu a { padding: 10px 14px; text-transform: none; font-weight: 500; border-bottom: 1px solid #f0f0f0; }
+  nav.main-nav ul.sub-menu a:hover { background: #f6f9fc; }
+  .menu-toggle {
+    display: none; background: none; border: 1px solid #ccc; padding: 8px 12px;
+    cursor: pointer; font-size: 14px; border-radius: 4px;
+  }
+
+  /* Main */
+  main { padding: 30px 0 60px; }
+  section.block { margin-bottom: 40px; }
+  .hero-video {
+    width: 100%; max-height: 520px; background: #000; display: block;
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card {
+    background: #fff; border: 1px solid #ececec; border-radius: 6px; overflow: hidden;
+    transition: box-shadow .2s ease, transform .2s ease;
+  }
+  .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.08); transform: translateY(-2px); }
+  .card .card-body { padding: 16px; }
+  .card h3 { font-size: 18px; margin-bottom: 8px; }
+  .video-embed {
+    position: relative; width: 100%; padding-top: 56.25%; background: #000;
+  }
+  .video-embed iframe {
+    position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+  }
+  .section-title {
+    font-size: 22px; border-left: 4px solid #0a66a8; padding-left: 12px; margin: 0 0 20px;
+  }
+  .btn {
+    display: inline-block; background: #0a66a8; color: #fff; padding: 10px 18px;
+    border-radius: 4px; font-weight: 600; font-size: 13px; text-transform: uppercase;
+  }
+  .btn:hover { background: #084e82; text-decoration: none; color: #fff; }
+
+  /* Footer */
+  footer.site-footer {
+    background: #1f2a37; color: #cfd6df; padding: 40px 0 0;
+  }
+  footer.site-footer a { color: #cfd6df; }
+  footer.site-footer a:hover { color: #fff; }
+  .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 30px; padding-bottom: 30px; }
+  .footer-grid h4 { color: #fff; font-size: 15px; text-transform: uppercase; margin-bottom: 14px; }
+  .footer-logo img { max-width: 180px; background: #fff; padding: 8px; border-radius: 4px; }
+  .socials { display: flex; gap: 10px; margin-top: 12px; }
+  .socials a {
+    width: 36px; height: 36px; border-radius: 50%; background: #2f3d4e;
+    display: inline-flex; align-items: center; justify-content: center; color: #fff;
+    font-weight: 700; text-decoration: none; font-size: 13px;
+  }
+  .socials a:hover { background: #0a66a8; }
+  .copyright {
+    border-top: 1px solid #2f3d4e; padding: 16px 0; text-align: center; font-size: 12px; color: #9aa5b1;
+  }
+
+  /* Cookie banner */
+  #cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; background: #1f2a37; color: #fff;
+    padding: 16px 20px; display: none; z-index: 9999; box-shadow: 0 -2px 14px rgba(0,0,0,.25);
+  }
+  #cookie-banner.show { display: flex; }
+  #cookie-banner .cb-inner {
+    max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  #cookie-banner p { margin: 0; font-size: 13px; flex: 1 1 320px; }
+  #cookie-banner button {
+    background: #0a66a8; color: #fff; border: 0; padding: 10px 18px; border-radius: 4px;
+    font-weight: 600; cursor: pointer; font-size: 13px;
+  }
+  #cookie-banner button.decline { background: transparent; border: 1px solid #cfd6df; }
+  #cookie-banner button:hover { filter: brightness(1.1); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .menu-toggle { display: inline-block; }
+    nav.main-nav { display: none; width: 100%; }
+    nav.main-nav.open { display: block; }
+    nav.main-nav ul { flex-direction: column; width: 100%; }
+    nav.main-nav ul.sub-menu {
+      position: static; box-shadow: none; border: 0;
+      background: #f6f9fc; min-width: 0;
+    }
+    .header-inner { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="https://www.amf30.fr/" aria-label="AMF 30 - Accueil">
+      <img src="https://amf30.fr/wp-content/uploads/2023/06/logo-amf30-header.png" alt="AMF 30" onerror="this.style.display='none'" />
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li class="has-sub">
+          <a href="#">L'Association</a>
+          <ul class="sub-menu">
+            <li><a href="https://www.amf30.fr/lassociation/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+            <li><a href="https://www.amf30.fr/lassociation/le-bureau/">Le bureau</a></li>
+            <li><a href="https://www.amf30.fr/lassociation/les-statuts/">Les statuts</a></li>
+            <li><a href="https://www.amf30.fr/lassociation/le-reglement-interieur/">Le règlement intérieur</a></li>
+            <li><a href="https://www.amf30.fr/lassociation/nos-partenaires/">Nos partenaires</a></li>
+          </ul>
+        </li>
+        <li><a href="https://www.amf30.fr/universites-des-maires-2026/">Universités 2026</a></li>
+        <li><a href="https://www.amf30.fr/elections-2026/">Élections 2026</a></li>
+        <li><a href="https://www.amf30.fr/salon-des-maires/">Salon des Maires</a></li>
+        <li><a href="https://www.amf30.fr/service-juridique/">Service juridique</a></li>
+        <li><a href="https://www.amf30.fr/actualites/">Actualités</a></li>
+        <li><a href="https://www.amf30.fr/reunions/">Réunions</a></li>
+        <li class="has-sub">
+          <a href="#">Annuaire</a>
+          <ul class="sub-menu">
+            <li><a href="https://www.amf30.fr/annuaire-des-maires/">Annuaire des Maires</a></li>
+            <li><a href="https://www.amf30.fr/annuaire-des-communes/">Annuaire des Communes</a></li>
+          </ul>
+        </li>
+        <li><a href="https://www.amf30.fr/sos-maires/">SOS Maires</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <section class="block">
+      <video class="hero-video" controls preload="metadata" poster="https://amf30.fr/public/poster.png">
+        <source src="https://amf30.fr/public/output.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la lecture vidéo.
+      </video>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title">Communiqué</h2>
+      <div class="grid-2">
+        <a href="https://amf30.fr/wp-content/uploads/2025/10/communique-amf30.pdf" target="_blank" rel="noopener">
+          <img src="https://amf30.fr/wp-content/uploads/2025/10/communique-amf30.png" alt="Communiqué AMF 30" onerror="this.style.display='none'" />
+        </a>
+        <div>
+          <h3>Communiqué de l'AMF 30</h3>
+          <p>Retrouvez le dernier communiqué officiel de l'Association des Maires du Gard.</p>
+          <a class="btn" href="https://amf30.fr/wp-content/uploads/2025/10/communique-amf30.pdf" target="_blank" rel="noopener">Lire le communiqué</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title">Colloque Élections 2026</h2>
+      <div class="card">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/6M8cTXW-yjo"
+                  title="Colloque Élections 2026"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Colloque Élections Municipales 2026</h3>
+          <p>Revivez le colloque organisé par l'AMF 30 consacré aux enjeux des élections municipales 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title">Webinaire FONPEL</h2>
+      <div class="card">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/xZJV04-ChEU"
+                  title="Webinaire FONPEL"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Webinaire FONPEL - Retraite des élus</h3>
+          <p>Présentation du dispositif FONPEL pour la retraite par rente des élus locaux.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title">Replay AMF - Scrutins</h2>
+      <div class="card">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/RuWh0bGY3SA"
+                  title="Replay AMF Scrutins"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="card-body">
+          <h3>Replay AMF - Organisation des scrutins</h3>
+          <p>Retour en vidéo sur la session consacrée à l'organisation des scrutins.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="section-title">Ressources</h2>
+      <div class="grid-3">
+        <a class="card" href="https://amf30.fr/wp-content/uploads/2025/09/programme-universites-2026.pdf" target="_blank" rel="noopener">
+          <img src="https://amf30.fr/wp-content/uploads/2025/09/universites-2026.png" alt="Universités des Maires 2026" onerror="this.style.display='none'" />
+          <div class="card-body"><h3>Universités des Maires 2026</h3><p>Programme et inscription.</p></div>
+        </a>
+        <a class="card" href="https://amf30.fr/wp-content/uploads/2024/06/annuaire-maires-2024.pdf" target="_blank" rel="noopener">
+          <img src="https://amf30.fr/wp-content/uploads/2024/06/annuaire-maires-2024.png" alt="Annuaire des Maires" onerror="this.style.display='none'" />
+          <div class="card-body"><h3>Annuaire des Maires</h3><p>Consultez l'annuaire en ligne.</p></div>
+        </a>
+        <a class="card" href="https://docs.google.com/forms/d/e/1FAIpQLSf-amf30" target="_blank" rel="noopener">
+          <img src="https://amf30.fr/wp-content/uploads/2024/01/contact-amf30.png" alt="Contact AMF 30" onerror="this.style.display='none'" />
+          <div class="card-body"><h3>Nous contacter</h3><p>Accéder au formulaire de contact.</p></div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="https://amf30.fr/wp-content/uploads/2023/06/logo-amf30-footer.png" alt="AMF 30" onerror="this.style.display='none'" />
+        </div>
+        <p>Association des Maires du Gard<br/>
+        Maison des Elus - Hôtel du Département<br/>
+        3 rue Guillemette - 30044 Nîmes Cedex 9</p>
+        <div class="socials" aria-label="Réseaux sociaux">
+          <a href="https://www.facebook.com/amf30" aria-label="Facebook" target="_blank" rel="noopener">f</a>
+          <a href="https://twitter.com/amf30" aria-label="Twitter" target="_blank" rel="noopener">t</a>
+          <a href="https://www.linkedin.com/company/amf30" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li><a href="https://www.amf30.fr/lassociation/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+          <li><a href="https://www.amf30.fr/actualites/">Actualités</a></li>
+          <li><a href="https://www.amf30.fr/reunions/">Réunions</a></li>
+          <li><a href="https://www.amf30.fr/service-juridique/">Service juridique</a></li>
+          <li><a href="https://www.amf30.fr/sos-maires/">SOS Maires</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>
+          Téléphone : 04 66 76 76 39<br/>
+          Email : <a href="mailto:contact@amf30.fr">contact@amf30.fr</a>
+        </p>
+        <p><a class="btn" href="mailto:contact@amf30.fr">Écrivez-nous</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    &copy; <span id="year"></span> AMF 30 - Association des Maires du Gard. Tous droits réservés.
+    &middot; <a href="https://www.amf30.fr/mentions-legales/">Mentions légales</a>
+    &middot; <a href="https://www.amf30.fr/politique-de-confidentialite/">Politique de confidentialité</a>
+  </div>
+</footer>
+
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+  <div class="cb-inner">
+    <p>Ce site utilise des cookies pour améliorer votre expérience. En cliquant sur &laquo;&nbsp;Accepter&nbsp;&raquo;, vous consentez à leur utilisation.</p>
+    <button type="button" id="cookie-accept">Accepter</button>
+    <button type="button" class="decline" id="cookie-decline">Refuser</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  var subItems = document.querySelectorAll('nav.main-nav li.has-sub > a');
+  subItems.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      if (window.matchMedia('(max-width: 900px)').matches) {
+        e.preventDefault();
+        link.parentNode.classList.toggle('open');
+      }
+    });
+  });
+
+  var CONSENT_KEY = 'amf30_cookie_consent';
+  var banner = document.getElementById('cookie-banner');
+  try {
+    if (!localStorage.getItem(CONSENT_KEY)) {
+      banner.classList.add('show');
+    }
+  } catch (e) {
+    banner.classList.add('show');
+  }
+  function setConsent(value) {
+    try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+    banner.classList.remove('show');
+  }
+  document.getElementById('cookie-accept').addEventListener('click', function () { setConsent('accepted'); });
+  document.getElementById('cookie-decline').addEventListener('click', function () { setConsent('declined'); });
+})();
+</script>
+
+</body>
+</html>
