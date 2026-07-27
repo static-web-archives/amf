@@ -1,22 +1,33 @@
-name: Test Google Drive Backup
+name: GitHub Repository Backup
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
-  backup-test:
+  backup:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Create test file
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create repository archive
         run: |
-          echo "GitHub backup test $(date)" > test-backup.txt
+          mkdir -p backup
+          tar \
+            --exclude=.git \
+            -czf backup/${{ github.repository }}-${{ github.sha }}.tar.gz .
 
       - name: Install Google libraries
         run: |
           pip install google-api-python-client google-auth
 
-      - name: Upload test file to Google Drive
+      - name: Upload archive to Google Drive
         env:
           GOOGLE_DRIVE_CREDENTIALS: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
           DRIVE_FOLDER_ID: 1G8zfwD2RNk4ZIEHGMnb7_NCCvfyNoKIi
@@ -28,27 +39,37 @@ jobs:
           from googleapiclient.discovery import build
           from googleapiclient.http import MediaFileUpload
 
+          backup_file = os.listdir("backup")[0]
+          backup_path = "backup/" + backup_file
+
           creds = service_account.Credentials.from_service_account_info(
               json.loads(os.environ["GOOGLE_DRIVE_CREDENTIALS"]),
               scopes=["https://www.googleapis.com/auth/drive"]
           )
 
-          service = build("drive", "v3", credentials=creds)
+          service = build(
+              "drive",
+              "v3",
+              credentials=creds
+          )
 
           file_metadata = {
-              "name": "test-backup.txt",
+              "name": backup_file,
               "parents": [os.environ["DRIVE_FOLDER_ID"]]
           }
 
           media = MediaFileUpload(
-              "test-backup.txt",
-              mimetype="text/plain"
+              backup_path,
+              mimetype="application/gzip"
           )
 
-          service.files().create(
+          result = service.files().create(
               body=file_metadata,
-              media_body=media
+              media_body=media,
+              fields="id,name,parents"
           ).execute()
 
           print("Upload successful")
+          print(result)
+
           EOF
