@@ -21,7 +21,7 @@ jobs:
           mkdir -p backup
           tar \
             --exclude=.git \
-            -czf backup/${{ github.repository }}-${{ github.sha }}.tar.gz .
+            -czf backup/amf-${{ github.sha }}.tar.gz .
 
       - name: Install Google libraries
         run: |
