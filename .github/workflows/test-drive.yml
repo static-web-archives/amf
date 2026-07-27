@@ -29,7 +29,7 @@ jobs:
 
       - name: Upload archive to Google Drive
         env:
-          GOOGLE_DRIVE_CREDENTIALS: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
+          GOOGLE_DRIVE_TOKEN: ${{ secrets.GOOGLE_DRIVE_TOKEN }}
           DRIVE_FOLDER_ID: 1G8zfwD2RNk4ZIEHGMnb7_NCCvfyNoKIi
         run: |
           python3 <<'EOF'
