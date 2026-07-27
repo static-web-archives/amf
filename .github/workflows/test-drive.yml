@@ -1,0 +1,54 @@
+name: Test Google Drive Backup
+
+on:
+  workflow_dispatch:
+
+jobs:
+  backup-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create test file
+        run: |
+          echo "GitHub backup test $(date)" > test-backup.txt
+
+      - name: Install Google libraries
+        run: |
+          pip install google-api-python-client google-auth
+
+      - name: Upload test file to Google Drive
+        env:
+          GOOGLE_DRIVE_CREDENTIALS: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS }}
+          DRIVE_FOLDER_ID: 1G8zfwD2RNk4ZIEHGMnb7_NCCvfyNoKIi
+        run: |
+          python3 <<'EOF'
+          import os
+          import json
+          from google.oauth2 import service_account
+          from googleapiclient.discovery import build
+          from googleapiclient.http import MediaFileUpload
+
+          creds = service_account.Credentials.from_service_account_info(
+              json.loads(os.environ["GOOGLE_DRIVE_CREDENTIALS"]),
+              scopes=["https://www.googleapis.com/auth/drive"]
+          )
+
+          service = build("drive", "v3", credentials=creds)
+
+          file_metadata = {
+              "name": "test-backup.txt",
+              "parents": [os.environ["DRIVE_FOLDER_ID"]]
+          }
+
+          media = MediaFileUpload(
+              "test-backup.txt",
+              mimetype="text/plain"
+          )
+
+          service.files().create(
+              body=file_metadata,
+              media_body=media
+          ).execute()
+
+          print("Upload successful")
+          EOF
